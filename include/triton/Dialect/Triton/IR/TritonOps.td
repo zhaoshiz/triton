@@ -1108,6 +1108,13 @@ def CallOp : TT_Op<"call", [CallOpInterface, /*MemRefsNormalizable, */DeclareOpI
       return getOperandsMutable();
     }
 
+    ArrayAttr getArgAttrsAttr() { return ArrayAttr(); }
+    ArrayAttr getResAttrsAttr() { return ArrayAttr(); }
+    void setArgAttrsAttr(ArrayAttr Attrs) {}
+    void setResAttrsAttr(ArrayAttr Attrs) {}
+    Attribute removeArgAttrsAttr() { return Attribute(); }
+    Attribute removeResAttrsAttr() { return Attribute(); }
+
   }];
 
   let assemblyFormat = [{
